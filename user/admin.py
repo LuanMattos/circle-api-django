@@ -2,8 +2,8 @@ from django.contrib import admin
 from user.models import User
 
 class Users(admin.ModelAdmin):
-    list_display = ('user_id','user_name')
-    list_display_links = ('user_id', 'user_name')
+    list_display = ('user_id','user_name',)
+    list_display_links = ('user_id', 'user_name',)
     search_fields = ('user_name',)
     list_per_page = 20
 

@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path,include
 from user.views import UsersViewSet
 from photo.views import PhotosViewSet
+from follower.views import FollowersViewSet
 from like.views import LikesViewSet
 from rest_framework import routers
 from django.conf import settings
@@ -11,6 +12,7 @@ router = routers.DefaultRouter()
 router.register('users', UsersViewSet, basename='Users')
 router.register('photos', PhotosViewSet, basename='Photos')
 router.register('likes', LikesViewSet, basename='Likes')
+router.register('followers', FollowersViewSet, basename='Followers')
 
 
 urlpatterns = [
