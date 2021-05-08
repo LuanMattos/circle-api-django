@@ -5,16 +5,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
-        
-# class CursoSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Curso
-#         fields = '__all__'
-
-# class MatriculaSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Matricula
-#         exclude = []
+        #exclude = []
 
 # class ListaMatriculasAlunoSerializer(serializers.ModelSerializer):
 #     curso = serializers.ReadOnlyField(source='curso.descricao')

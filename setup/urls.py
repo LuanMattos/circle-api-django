@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path,include
 from user.views import UsersViewSet
 from photo.views import PhotosViewSet
+from like.views import LikesViewSet
 from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
@@ -9,8 +10,8 @@ from django.conf.urls.static import static
 router = routers.DefaultRouter()
 router.register('users', UsersViewSet, basename='Users')
 router.register('photos', PhotosViewSet, basename='Photos')
-# router.register('cursos', CursosViewSet, basename='Cursos')
-# router.register('matriculas', MatriculaViewSet, basename='Matriculas')
+router.register('likes', LikesViewSet, basename='Likes')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
