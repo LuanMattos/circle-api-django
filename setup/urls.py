@@ -4,6 +4,7 @@ from user.views import UsersViewSet
 from photo.views import PhotosViewSet
 from follower.views import FollowersViewSet
 from like.views import LikesViewSet
+from comment.views import CommentsViewSet
 from rest_framework import routers
 from django.conf import settings
 from django.conf.urls.static import static
@@ -13,6 +14,7 @@ router.register('users', UsersViewSet, basename='Users')
 router.register('photos', PhotosViewSet, basename='Photos')
 router.register('likes', LikesViewSet, basename='Likes')
 router.register('followers', FollowersViewSet, basename='Followers')
+router.register('comments', CommentsViewSet, basename='Comments')
 
 
 urlpatterns = [
