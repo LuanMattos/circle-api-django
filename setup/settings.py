@@ -13,7 +13,7 @@ SECRET_KEY = 'we2q@@2p30+=^#(xbgl7e@3+r2dt+zmf#us2m$ix=q&n+=y-z$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['venv.eba-rmkiwdv2.us-east-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -87,8 +87,8 @@ DATABASES = {
             'options': '-c search_path=square'
         },
         'USER':'postgres',
-        'PASSWORD':'postgres',
-        'HOST':'localhost',
+        'PASSWORD':'F4D3Ro8Ud3VVH61K74Vlp31HKyCmd3Tp1g5N',
+        'HOST':'squaredb1.cowcxqaftukz.us-east-2.rds.amazonaws.com',
     }
 }
 
@@ -154,5 +154,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    # "http://localhost:3000"
 ]
