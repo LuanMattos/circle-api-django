@@ -13,7 +13,7 @@ SECRET_KEY = 'we2q@@2p30+=^#(xbgl7e@3+r2dt+zmf#us2m$ix=q&n+=y-z$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['venv.eba-rmkiwdv2.us-east-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
