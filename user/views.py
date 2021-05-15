@@ -4,6 +4,8 @@ from user.models import User
 from user.serializer import UserSerializerV2, UserSerializer
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
+from rest_framework.authentication import BasicAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 class UsersViewSet(viewsets.ModelViewSet):
     """Exibindo todos os usuários """
@@ -13,6 +15,10 @@ class UsersViewSet(viewsets.ModelViewSet):
             return UserSerializerV2
         else:
             return UserSerializer
+
+    @method_decorator(cache_page(50))
+    def dispatch(self, *args, **kwargs):
+        return super(UsersViewSet, self).dispatch(*args,**kwargs)
 
 # class CursosViewSet(viewsets.ModelViewSet):
 #     """Exibindo todos os cursos"""
