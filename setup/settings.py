@@ -156,5 +156,5 @@ REST_FRAMEWORK = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "https://mycircle.click"
+    # "https://mycircle.click"
 ]
