@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'geolocation',
     'system_data_information',
     'corsheaders',
+    'whitenoise'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'setup.urls'
@@ -132,6 +134,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 MEDIA_URL = '/media/'
+STATIC_ROOT = '/static/'
+
 
 REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning',
@@ -158,3 +162,5 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     # "https://mycircle.click"
 ]
+# cache statics
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
