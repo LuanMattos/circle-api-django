@@ -1,4 +1,4 @@
-#!c:\users\patrick.mattos\desktop\python\drf-escola\venv\scripts\python.exe
+#!c:\users\patrick.mattos\desktop\circle\circle-api-django\venv\scripts\python.exe
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
