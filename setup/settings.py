@@ -75,24 +75,35 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'OPTIONS': {
-            'options': '-c search_path=square'
-        },
-        'USER':'postgres',
-        'PASSWORD':'F4D3Ro8Ud3VVH61K74Vlp31HKyCmd3Tp1g5N',
-        'HOST':'squaredb1.cowcxqaftukz.us-east-2.rds.amazonaws.com',
+environment = 'dev'
+
+if environment == 'dev':
+        DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'OPTIONS': {
+                'options': '-c search_path=square'
+            },
+            'USER':'postgres',
+            'PASSWORD':'postgres',
+            'HOST':'localhost',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'OPTIONS': {
+                'options': '-c search_path=square'
+            },
+            'USER':'postgres',
+            'PASSWORD':'F4D3Ro8Ud3VVH61K74Vlp31HKyCmd3Tp1g5N',
+            'HOST':'squaredb1.cowcxqaftukz.us-east-2.rds.amazonaws.com',
+        }
+    }
+
 
 
 # Password validation
