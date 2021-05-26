@@ -12,6 +12,7 @@ class Photo(models.Model):
     photo_comments = models.BigIntegerField(blank=True, null=True)
     photo_public = models.BigIntegerField(blank=True, null=True)
     photo_styles = models.CharField(max_length=100, blank=True, null=True)
+    log_error_count = models.BigIntegerField(blank=True, null=True)
 
     class Meta:
         managed = False
