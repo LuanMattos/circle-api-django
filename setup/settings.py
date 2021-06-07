@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'setup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-environment = 'dev'
+environment = 'prod'
 
 if environment == 'dev':
         DATABASES = {
