@@ -12,6 +12,7 @@ from rest_framework.views import APIView
 
 
 
+
 import pprint
 pp = pprint.PrettyPrinter(indent=4)
 
@@ -20,8 +21,16 @@ class PhotoStatisticas(generics.ListAPIView):
     """Exibindo todas as estatisticas de photo e video """
     serializer_class = PhotoStatisticSerializer
     def get_queryset(self):
-        queryset = PhotoStatistic.objects.filter(user_id=self.kwargs['pk'])
+        queryset = PhotoStatistic.objects.filter(user_id=self.kwargs['pk']).order_by('-photo_statistic_time')
+        valores = list(queryset.values())
+        # print(valores)
         return queryset
-  
+    
+
+# class StatisticStart(APIView):
+#     def get_queryset(self, format=None):
+#         photo = PhotoStatistic.objects.filter(user_id=self.kwargs['pk']).order_by('-photo_statistic_time')
+#         serializer = PhotoStatistic(photo, many=True)
+#         return Response(serializer.data)
          
 

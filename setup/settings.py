@@ -1,5 +1,6 @@
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -36,7 +37,8 @@ INSTALLED_APPS = [
     'geolocation',
     'system_data_information',
     'corsheaders',
-    'whitenoise'
+    'whitenoise',
+    'photo_statistic'
 ]
 
 MIDDLEWARE = [
@@ -87,7 +89,7 @@ if environment == 'dev':
             },
             'USER':'postgres',
             'PASSWORD':'postgres',
-            'HOST':'localhost',
+            'HOST':'host.docker.internal',
         }
     }
 else:
@@ -153,11 +155,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 80,
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-        'rest_framework.permissions.DjangoModelPermissions'
+        # 'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.DjangoModelPermissions'
     ],
     'DEFAULT_AUTHENTICATION_CLASSES':[
-        'rest_framework.authentication.BasicAuthentication'
+        # 'rest_framework.authentication.BasicAuthentication'
     ],
     'DEFAULT_THROTTLE_CLASSES': [
         # Usuário anônimo

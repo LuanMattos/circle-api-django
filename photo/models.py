@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Photo(models.Model):
-    photo_id = models.AutoField(primary_key=True)
+    photo_id = models.BigIntegerField(primary_key=True)
     photo_post_date = models.DateTimeField()
     photo_url = models.TextField()
     photo_description = models.TextField(blank=True, null=True)
