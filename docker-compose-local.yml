@@ -13,5 +13,5 @@ services:
 networks:
   django:
    driver: bridge
-   
+
 

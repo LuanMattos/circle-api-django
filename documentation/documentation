@@ -3,3 +3,14 @@ gunicorn --bind 0.0.0.0:8000 setup.wsgi --daemon
 pip install nltk
 python -m nltk.downloader stopwords
 python -m nltk.downloader punkt
+
+
+Problemas ubuntu ao criar env
+python3 -m venv myenv --without-pip
+source /venv/bin/activate
+pip install --upgrade pip
+sudo apt-get install python3.5-gdbm
+
+ou (vai na sorte)
+
+sudo apt-get install python3.6-venv
