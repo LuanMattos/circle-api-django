@@ -30,8 +30,9 @@ class PhotoStatisticSerializer(serializers.ModelSerializer):
             user = User.objects.filter(user_id=item['user_id'])
             values = [ x for x in user.values('description') ]
             words = values[0]['description'] 
+            print(values[0])
         
-        print(words)
+        
 
         time = item_statistic['photo_statistic_time']
 
