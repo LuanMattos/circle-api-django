@@ -29,8 +29,11 @@ class PhotoStatisticSerializer(serializers.ModelSerializer):
         if not len(words):
             user = User.objects.filter(user_id=item['user_id'])
             values = [ x for x in user.values('description') ]
-            words = values[0]['description'] 
-            print(values[0])
+            if values[0]['description']:
+                words = values[0]['description']
+            else:
+                words = ''
+            print(item['user_id'],"------------",values[0])
         
         
 
