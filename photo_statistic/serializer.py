@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from photo_statistic.models import PhotoStatistic
 from photo.models import Photo
+from user.models import User
 from photo.serializer import PhotoSerializer
 from nltk import tokenize
 from operator import itemgetter
@@ -25,6 +26,11 @@ class PhotoStatisticSerializer(serializers.ModelSerializer):
         stop_words = set(stopwords.words('portuguese'))
         stop_words_english = set(stopwords.words('english'))
         words = item['photo_description']
+        if not len(words):
+            user = User.objects.filter(user_id=item['user_id'])
+            values = [ x for x in user.values('description') ]
+            words = values[0]['description'] 
+
         time = item_statistic['photo_statistic_time']
 
         total_words = words.split()
